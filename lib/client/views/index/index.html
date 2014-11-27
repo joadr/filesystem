@@ -1,0 +1,44 @@
+<template name="adminFilesIndex">
+	<div class="adminFilesIndex">
+		<h3>
+			<a href="{{ pathFor 'adminFilesCreate' }}" 
+			class="btn btn-primary btn-sm pull-right">Upload</a>
+			Files
+		</h3>
+		<hr>
+		<ol class="breadcrumb">
+			{{# if isOnTop}}
+				<li class="active">home</li>
+			{{ else }}
+				<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">home</a></li>
+			{{/ if }}
+			{{# each breadcrumb }}
+				{{# if isLast }}
+					<li class="active">{{ name }}</li>
+				{{ else }}
+					<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+				{{/ if }}
+			{{/ each }}
+		</ol>
+		{{# each folders }}
+			{{> adminFilesIndexFolder }}
+		{{/ each }}
+		{{# each files }}
+			{{> adminFilesIndexFile }}
+		{{/ each }}
+	</div>
+</template>
+
+<template name="adminFilesIndexFolder">
+	<a href="{{ pathFor 'adminFilesIndex' query=query }}" class="adminFilesIndexFolder">
+		<i class="fa fa-folder"></i>
+		<p>{{ label }}</p>
+	</a>
+</template>
+
+<template name="adminFilesIndexFile">
+	<a href="{{ pathFor 'adminFilesShow' }}" class="adminFilesIndexFile">
+		<i class="fa fa-file"></i>
+		<p>{{ name  }}</p>
+	</a>
+</template>
