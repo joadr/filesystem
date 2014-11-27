@@ -9,7 +9,7 @@ Package.onUse(function(api) {
 	api.versionsFrom('1.0');
 
 	api.use([
-		'orionjs:admin', 
+		'orionjs:admin@0.1.1', 
 		'meteor-platform',
 		'aldeed:collection2@2.0.0',
 		]);
