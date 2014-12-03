@@ -12,8 +12,10 @@
 	<p><span class="label label-primary">{{ file.folder }}</span></p>
 	<br>
 
-	<p><b>Url:</b></p>
-	<p><a href="{{ file.url }}" target="_BLANK">{{ file.url }}</a></p>
+	<p><b>Image:</b></p>
+	<p><a href="{{ file.url }}" target="_BLANK"><img src="{{ file.url }}" alt=""/>
+	<br>{{ file.url }}
+	</a></p>
 	<br>
 
 	<p><b>Uploaded:</b></p>
