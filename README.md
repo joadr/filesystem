@@ -3,7 +3,7 @@ Filesystem for Orion
 
 Unified filesystem for orion. Also creates a panel to view all your files.
 
-http://orion.meteor.com/docs/filesystem
+http://orion.meteor.com/docs/next-steps/filesystem
 
 Orion is a simple and useful cms for meteor. 
 Creates automatically a admin panel for 
