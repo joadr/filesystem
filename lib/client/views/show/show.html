@@ -12,11 +12,24 @@
 	<p><span class="label label-primary">{{ file.folder }}</span></p>
 	<br>
 
+	{{# if isImage file.url }}
 	<p><b>Image:</b></p>
-	<p><a href="{{ file.url }}" target="_BLANK">
-		{{{ fileType file.url }}}
-	</a></p>
+	<p>
+		<a href="{{ file.url }}" target="_BLANK">
+			<img src="{{ file.url }}" alt="{{ file.name }}">
+		</a>
+	</p>
 	<br>
+	{{ else }}
+	<p><b>URL:</b></p>
+	<p>
+		<a href="{{ file.url }}" target="_BLANK">
+			{{ file.url }}
+		</a>
+	</p>
+	<br>
+	{{/ if }}
+	
 
 	<p><b>Uploaded:</b></p>
 	<p>{{ file.createdAt }}</p>

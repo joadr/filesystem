@@ -31,14 +31,14 @@
 
 <template name="adminFilesIndexFolder">
 	<a href="{{ pathFor 'adminFilesIndex' query=query }}" class="adminFilesIndexFolder">
-		<i class="fa fa-folder"></i>
+		<i class="fa fa-folder-o"></i>
 		<p>{{ label }}</p>
 	</a>
 </template>
 
 <template name="adminFilesIndexFile">
 	<a href="{{ pathFor 'adminFilesShow' }}" class="adminFilesIndexFile">
-		<i class="fa fa-file"></i>
-		<p>{{ name  }}</p>
+		<i class="fa {{ iconForFile url }}"></i>
+		<p>{{ name }}</p>
 	</a>
 </template>

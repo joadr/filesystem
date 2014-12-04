@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:filesystem',
 	summary: 'Filesystem for orionjs',
-	version: '0.0.5',
+	version: '0.0.6',
 	git: 'https://github.com/orionjs/filesystem'
 });
 
@@ -9,7 +9,7 @@ Package.onUse(function(api) {
 	api.versionsFrom('1.0');
 
 	api.use([
-		'orionjs:admin@0.1.2', 
+		'orionjs:admin@0.1.3', 
 		'meteor-platform',
 		'aldeed:collection2@2.0.0',
 		]);
@@ -23,6 +23,7 @@ Package.onUse(function(api) {
 
 	api.addFiles([
 		'lib/register.js',
+		'lib/client/helpers/helpers.js',
 		'lib/client/views/index/index.html',
 		'lib/client/views/index/index.js',
 		'lib/client/views/index/index.less',
