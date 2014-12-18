@@ -1,31 +1,32 @@
 <template name="adminFilesIndex">
 	<div class="adminFilesIndex">
-		<h3>
+		<div class="admin-top-nav">
 			<a href="{{ pathFor 'adminFilesCreate' }}" 
 			class="btn btn-primary btn-sm pull-right">Upload</a>
-			Files
-		</h3>
-		<hr>
-		<ol class="breadcrumb">
-			{{# if isOnTop}}
-				<li class="active">home</li>
-			{{ else }}
-				<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">home</a></li>
-			{{/ if }}
-			{{# each breadcrumb }}
-				{{# if isLast }}
-					<li class="active">{{ name }}</li>
+			<span class="title">Files</span>
+		</div>
+		<div class="admin-content">
+			<ol class="breadcrumb">
+				{{# if isOnTop}}
+					<li class="active">home</li>
 				{{ else }}
-					<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+					<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">home</a></li>
 				{{/ if }}
+				{{# each breadcrumb }}
+					{{# if isLast }}
+						<li class="active">{{ name }}</li>
+					{{ else }}
+						<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+					{{/ if }}
+				{{/ each }}
+			</ol>
+			{{# each folders }}
+				{{> adminFilesIndexFolder }}
 			{{/ each }}
-		</ol>
-		{{# each folders }}
-			{{> adminFilesIndexFolder }}
-		{{/ each }}
-		{{# each files }}
-			{{> adminFilesIndexFile }}
-		{{/ each }}
+			{{# each files }}
+				{{> adminFilesIndexFile }}
+			{{/ each }}
+		</div>
 	</div>
 </template>
 
