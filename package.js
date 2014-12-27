@@ -12,6 +12,7 @@ Package.onUse(function(api) {
 		'orionjs:admin@0.2.0', 
 		'meteor-platform',
 		'aldeed:collection2@2.0.0',
+		'natestrauser:font-awesome@4.2.0'
 		]);
 
 	api.addFiles([
