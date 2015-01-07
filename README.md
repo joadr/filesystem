@@ -5,7 +5,7 @@ The filesystem module is a unified upload system that keep track
 of all the files that are uploaded to orion and use any provider
 you want.
 
-http://orion.meteor.com/docs/next-steps/filesystem
+http://orion.meteor.com/docs/extras/config
 
 ![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
 
