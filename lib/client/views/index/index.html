@@ -3,23 +3,24 @@
 		<div class="admin-top-nav">
 			<a href="{{ pathFor 'adminFilesCreate' }}" 
 			class="btn btn-primary btn-sm pull-right">Upload</a>
-			<span class="title">Files</span>
-		</div>
-		<div class="admin-content">
-			<ol class="breadcrumb">
-				{{# if isOnTop}}
-					<li class="active">home</li>
-				{{ else }}
-					<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">home</a></li>
-				{{/ if }}
-				{{# each breadcrumb }}
-					{{# if isLast }}
-						<li class="active">{{ name }}</li>
+			<span class="title">
+				<ol class="breadcrumb">
+					{{# if isOnTop}}
+						<li class="active">Files</li>
 					{{ else }}
-						<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+						<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">Files</a></li>
 					{{/ if }}
-				{{/ each }}
-			</ol>
+					{{# each breadcrumb }}
+						{{# if isLast }}
+							<li class="active">{{ name }}</li>
+						{{ else }}
+							<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+						{{/ if }}
+					{{/ each }}
+				</ol>
+			</span>
+		</div>
+		<div class="admin-content admin-content-less-padding">
 			{{# each folders }}
 				{{> adminFilesIndexFolder }}
 			{{/ each }}
@@ -32,14 +33,14 @@
 
 <template name="adminFilesIndexFolder">
 	<a href="{{ pathFor 'adminFilesIndex' query=query }}" class="adminFilesIndexFolder">
-		<i class="fa fa-folder-o"></i>
-		<p>{{ label }}</p>
+		<div class="icon"><i class="fa fa-fw fa-folder"></i></div>
+		<div class="name">{{ label }}</div>
 	</a>
 </template>
 
 <template name="adminFilesIndexFile">
 	<a href="{{ pathFor 'adminFilesShow' }}" class="adminFilesIndexFile">
-		<i class="fa {{ iconForFile url }}"></i>
-		<p>{{ name }}</p>
+		<div class="icon"><i class="fa fa-fw {{ iconForFile url }}"></i></div>
+		<div class="name">{{ name }}</div>
 	</a>
 </template>

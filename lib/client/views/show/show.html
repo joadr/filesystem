@@ -1,14 +1,22 @@
 <template name="adminFilesShow">
 	<div class="admin-top-nav">
-		<span class="title">File</span>
+		<span class="title">
+			<ol class="breadcrumb">
+				<li><a href="{{ pathFor 'adminFilesIndex' query='path=' }}">Files</a></li>
+				{{# each breadcrumb }}
+					<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
+				{{/ each }}
+				<li class="active">{{ file.name }}</li>
+			</ol>
+		</span>
 	</div>
 	<div class="admin-content">
 		<p><b>Name:</b></p>
 		<p>{{ file.name }}</p>
 		<br>
 
-		<p><b>Folder:</b></p>
-		<p><span class="label label-primary">{{ file.folder }}</span></p>
+		<p><b>Path:</b></p>
+		<p><span class="label label-primary">{{ file.folder }}/{{ file.name }}</span></p>
 		<br>
 
 		{{# if isImage file.url }}
