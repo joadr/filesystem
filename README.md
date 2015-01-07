@@ -7,7 +7,7 @@ you want.
 
 http://orion.meteor.com/docs/next-steps/filesystem
 
-![alt tag](http://i.imgur.com/GLJ0wTM.png)
+![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
 
 > Orion is a simple and useful cms for meteor. 
 Creates automatically a admin panel for 
