@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:filesystem',
 	summary: 'Filesystem for orionjs',
-	version: '0.0.10',
+	version: '0.0.11',
 	git: 'https://github.com/orionjs/filesystem'
 });
 

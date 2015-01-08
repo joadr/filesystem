@@ -1,7 +1,11 @@
 Orion Filesystem
-==========
+================
 
 This is the changelog for ```orionjs:filesystem```. 
+
+### 0.0.11
+
+- Add file icon in breadcrumb.
 
 ### 0.0.10
 

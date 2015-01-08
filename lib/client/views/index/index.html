@@ -1,8 +1,6 @@
 <template name="adminFilesIndex">
 	<div class="adminFilesIndex">
 		<div class="admin-top-nav">
-			<a href="{{ pathFor 'adminFilesCreate' }}" 
-			class="btn btn-primary btn-sm pull-right">Upload</a>
 			<span class="title">
 				<ol class="breadcrumb">
 					{{# if isOnTop}}
@@ -17,6 +15,11 @@
 							<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
 						{{/ if }}
 					{{/ each }}
+					<li>
+						<a class="add-file" href="{{ pathFor 'adminFilesCreate' query=query }}" title="Add a new file here">
+							+
+						</a>
+					</li>
 				</ol>
 			</span>
 		</div>
