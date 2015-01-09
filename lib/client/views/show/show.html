@@ -45,7 +45,9 @@
 		<p>
 			<a class="btn btn-primary" href="{{ pathFor 'adminFilesIndex' }}">Back</a>
 			{{# if file.canRemove }}
-				<a class="btn btn-danger" href="{{ pathFor 'adminFilesDelete' _id=file._id }}">Delete</a>
+				{{# if doIHavePermission 'files.delete' }}
+					<a class="btn btn-danger" href="{{ pathFor 'adminFilesDelete' _id=file._id }}">Delete</a>
+				{{/ if }}
 			{{/ if }}
 		</p>
 	</div>

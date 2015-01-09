@@ -1,7 +1,7 @@
 Package.describe({
 	name: 'orionjs:filesystem',
 	summary: 'Filesystem for orionjs',
-	version: '0.0.11',
+	version: '0.0.12',
 	git: 'https://github.com/orionjs/filesystem'
 });
 
@@ -19,10 +19,10 @@ Package.onUse(function(api) {
 		'lib/collection/init.js',
 		'lib/collection/methods.js',
 		'lib/routes.js',
+		'lib/register.js',
 		]);
 
 	api.addFiles([
-		'lib/register.js',
 		'lib/client/helpers/helpers.js',
 		'lib/client/views/index/index.html',
 		'lib/client/views/index/index.js',

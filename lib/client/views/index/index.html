@@ -15,11 +15,13 @@
 							<li><a href="{{ pathFor 'adminFilesIndex' query=query }}">{{ name }}</a></li>
 						{{/ if }}
 					{{/ each }}
-					<li>
-						<a class="add-file" href="{{ pathFor 'adminFilesCreate' query=query }}" title="Add a new file here">
-							+
-						</a>
-					</li>
+					{{# if doIHavePermission 'files.upload' }}
+						<li>
+							<a class="add-file" href="{{ pathFor 'adminFilesCreate' query=query }}" title="Add a new file here">
+								+
+							</a>
+						</li>
+					{{/ if }}
 				</ol>
 			</span>
 		</div>
