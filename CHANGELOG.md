@@ -3,6 +3,10 @@ Orion Filesystem
 
 This is the changelog for ```orionjs:filesystem```. 
 
+### 0.0.13
+
+- Changed ```orionjs:admin``` to ```orionjs:core```.
+
 ### 0.0.12
 
 - Users permissions.
