@@ -18,9 +18,9 @@ to have key/value definitions for your site.
 
 ## Getting Started
 
-*If you have installed packages that uses **orionjs:filesystem** like 
+If you have installed packages that uses **orionjs:filesystem** like 
 **orionjs:summernote** or **orionjs:image-attribute** you don't have
-to install this*
+to install this
 
 ```sh
 meteor add orionjs:filesystem
