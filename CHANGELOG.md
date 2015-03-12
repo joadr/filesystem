@@ -3,6 +3,12 @@ Orion Filesystem
 
 This is the changelog for ```orionjs:filesystem```. 
 
+### 0.0.14 
+
+- Rewrited routes.
+
+- Works on new admin subscription api.
+
 ### 0.0.13
 
 - Changed ```orionjs:admin``` to ```orionjs:core```.
