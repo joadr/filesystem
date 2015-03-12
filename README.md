@@ -5,37 +5,28 @@ The filesystem module is a unified upload system that keep track
 of all the files that are uploaded to orion and use any provider
 you want.
 
-http://orion.meteor.com/docs/filesystem
-
 ![alt tag](http://i.imgur.com/Rl3Mpvi.jpg)
-
-> Orion is a simple and useful cms for meteor. 
-Creates automatically a admin panel for 
-your collections and gives you the ability 
-to have key/value definitions for your site.
-
-> More info on http://orion.meteor.com
 
 ## Getting Started
 
-If you have installed packages that uses **orionjs:filesystem** like 
-**orionjs:summernote** or **orionjs:image-attribute** you don't have
-to install this
+Install filesystem
 
 ```sh
 meteor add orionjs:filesystem
 ```
 
-### Uploading to S3 
+Install the provider 
+(currently the only one is S3. 
+To use S3 need to config some things, see [here](https://github.com/orionjs/s3))
 
-You can upload your files easily to AWS S3.
-Read the instructions [here](https://github.com/orionjs/s3)
+```sh
+meteor add orionjs:s3
+```
 
 ## Creating a Provider
 
 You can setup a provider and orion will automatically upload 
-all the files through this, including packages upload functions
-like **orionjs:summernote**
+all the files through this, and all packages in compatible with orion should too.
 
 ### Provider Upload
 
@@ -64,6 +55,16 @@ Example:
 ```js
 // Official S3 Upload Provider
 orion.filesystem.providerUpload = function(options, success, failure) {
+	/**
+     * Here you will recive the file in the variable options.fileList.
+     *
+     * You have to upload the file using the method you want.
+     *
+     * If the file was uploaded successfully call success(fileUrl, optionalData)
+     * The optionalData will be saved in the meta variable
+     *
+     * If not call failure(error).
+     */
 	S3.upload(options.fileList, "/orionjs", function(error, result) {
 		if (error) {
 			failure(error);
@@ -95,6 +96,16 @@ Example:
 ```js
 // Official S3 Remove Provider
 orion.filesystem.providerRemove = function(file, success, failure)  {
+	/**
+     * Here you will recive the file object, containing the url and 
+     * the optionalData in file.meta.
+     *
+     * You have remove the file.
+     *
+     * If the file was removed successfully call success()
+     *
+     * If not call failure(error).
+     */
 	S3.delete(file.meta.s3Path, function(error, result) {
 		if (error) {
 			failure(error);
