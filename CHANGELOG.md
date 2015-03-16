@@ -3,6 +3,10 @@ Orion Filesystem
 
 This is the changelog for ```orionjs:filesystem```. 
 
+### 0.0.15 
+
+- Added the posibility to upload files without been logged in.
+
 ### 0.0.14 
 
 - Rewrited routes.
