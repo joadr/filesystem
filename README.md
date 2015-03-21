@@ -1,5 +1,5 @@
-Filesystem for Orion
-====================
+Orion Filesystem
+================
 
 The filesystem module is a unified upload system that keep track
 of all the files that are uploaded to orion and use any provider
