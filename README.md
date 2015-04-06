@@ -125,7 +125,7 @@ Example:
 
 ```js
 orion.filesystem.upload({
-    fileList: fileInput[0].files, 
+    fileList: $(".fileInput")[0].files, 
     name: 'file.txt', 
     folder: 'my-extension-files', 
     canRemove: true // Can the admin delete manually the files
